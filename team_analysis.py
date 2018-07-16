@@ -42,7 +42,7 @@ for i in odds:
     
 #setup prem league ranking 
 for i in range(1, 21):
-    number.append(i)
+    ranking.append(i)
     
 #create dataframe for teams and odds
 df = pd.DataFrame({'teams': teams, 'odds': decimal_odds,}, index= ranking)
