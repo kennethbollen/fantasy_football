@@ -45,7 +45,7 @@ for i in range(1, 21):
     number.append(i)
     
 #create dataframe for teams and odds
-df = pd.DataFrame({'teams': teams, 'odds': decimal_odds,}, index= number)
+df = pd.DataFrame({'teams': teams, 'odds': decimal_odds,}, index= ranking)
 
 #calculate the implied probability based on the betting odds 
 df['implied_probability'] = round((1 / df['odds']) * 100, 2)
