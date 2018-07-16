@@ -1,0 +1,18 @@
+#py3
+
+download_dir = ''
+upload_dir = ''
+
+df_1314 = pd.read_csv(download_dir & '/fpl_1314.csv')
+df_1415 = pd.read_csv(download_dir & '/fpl_1415.csv')
+df_1516 = pd.read_csv(download_dir & '/fpl_1516.csv')
+df_1617 = pd.read_csv(download_dir & '/fpl_1617.csv')
+df_1718 = pd.read_csv(download_dir & '/fpl_1718.csv')
+
+df_all = pd.concat([df_1314, df_1415, df_1516, df_1617, df_1718])
+
+df_all = df_all.drop(['Team', 'Pld', 'GD', 'Pts'], axis=1)
+
+df_mean = df_all.groupby('Pos').mean()
+
+df_mean.to_csv(upload_dir & '/df_mean.csv')
