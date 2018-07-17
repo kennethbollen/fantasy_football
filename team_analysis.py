@@ -9,6 +9,12 @@ odds = []
 decimal_odds = []
 ranking = []
 
+#file directories
+attack_players = ''
+midfield_players = ''
+defender_players = ''
+gk_players = ''
+
 #function used to convert string fraction odds into decimals (source: https://stackoverflow.com/questions/1806278/convert-fraction-to-float)
 
 def convert_to_float(frac_str):
@@ -49,5 +55,13 @@ df = pd.DataFrame({'teams': teams, 'odds': decimal_odds,}, index= ranking)
 
 #calculate the implied probability based on the betting odds 
 df['implied_probability'] = round((1 / df['odds']) * 100, 2)
+
+#players stats (attacking)
+attack_headers = ['player_name', 'team', 'fantasy_cost', 'app', 'mins', 'pen_tchs', 'gls_tot', 'gls_inbox', 'gls_outbox', 'gls_head', 'big_chance_scored', 'mins_per_goal', 'atmps_tot', 'atmps_inbox', 'atmps_outbox', 'big_chance_atmps', 'atmps_head', 'mins_per_chance', 'shots_tot', 'gls_conv']
+df_attack = pd.read_csv(attack_players, names=attack_headers, encoding='ISO-8859-1',skiprows=1)
+
+
+
+
 
 
