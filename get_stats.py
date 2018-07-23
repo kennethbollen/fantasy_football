@@ -13,13 +13,16 @@ password = ''
 #using Google Chrome browser, requires Chrome Driver to be installed into PATH
 driver = webdriver.Chrome(path)
 
-#access fantasy football scout members access page
-driver.get('https://members.fantasyfootballscout.co.uk/')
+#access fantasy football scout
+driver.get('https://fantasyfootballscout.co.uk/')
 
 #input user name and password
-driver.find_element(by='name', value='username').send_keys(username)
-driver.find_element(by='name', value='password').send_keys(password)
-driver.find_element(by='name', value='login').click()
+driver.find_element(by='name', value='log').send_keys(username)
+driver.find_element(by='name', value='pwd').send_keys(password)
+driver.find_element(by='name', value='wp-submit').click()
+
+#enter members area
+driver.get('http://members.fantasyfootballscout.co.uk')
 
 #get defending data
 driver.get('https://members.fantasyfootballscout.co.uk/team-stats/defending/')
