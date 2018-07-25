@@ -58,6 +58,6 @@ for i in range(len(metrics)):
 			file_row.append(datum_text)
 	metrics[i].append(','.join(file_row))
 	
-	with open(save_location + '/%s.csv' % web_metrics[i], 'wb') as f:
+	with open(save_location + '/%s.csv' % web_metrics[i], 'w') as f:
 		wr = csv.writer(f, dialect='excel')
 		wr.writerows(metrics[i])
