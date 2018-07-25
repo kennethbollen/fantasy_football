@@ -1,6 +1,7 @@
 #py3!
 
 from selenium import webdriver
+import csv
 
 #username and password
 username = 'ukza17'
@@ -55,5 +56,6 @@ for i in range(len(metrics)):
 			file_row.append(datum_text)
 	metrics[i].append(','.join(file_row))
 	
-	with open(save_location + '/%s.csv' % web_metrics[i], "w") as f:
-		f.write('/n'.join(metrics[i]))
+	with open(save_location + '/%s.csv' % web_metrics[i], 'wb') as f:
+		wr = csv.writer(f, dialect='excel')
+		wr.writerows(metrics[i])
