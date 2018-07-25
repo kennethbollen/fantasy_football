@@ -43,6 +43,8 @@ driver.find_element(by='name', value='login').click()
 print('retriving team data to be loaded as csv...')
 print()
 for i in range(len(metrics)):
+	print('accessing %s page...' % web_metrics[i])
+	print()
 	driver.get('https://members.fantasyfootballscout.co.uk/team-stats/%s/' % web_metrics[i])
 	table = driver.find_element_by_class_name('stats')
 	body = table.find_element_by_tag_name('tbody')
