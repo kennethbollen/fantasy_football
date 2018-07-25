@@ -39,8 +39,9 @@ for i in range(len(metrics)):
 	for row in body_rows:
 		data = row.find_elements_by_tag_name('td')
 		file_row = []
-		for datum_text = datum.text
-		file_row.append(datum_text)
+		for datum in data:
+			datum_text = datum.text
+			file_row.append(datum_text)
 	metrics[i].append(','.join(file_row))
 	
 	with open(save_location + '/%s.csv' % web_metrics[i], "w") as f:
