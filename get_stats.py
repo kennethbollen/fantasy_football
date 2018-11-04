@@ -8,7 +8,7 @@ username = 'ukza17'
 password = 'Antwerp11'
 
 #save csv directory
-save_location = '/Users/2024450/Documents/Stats/fpl/csv_files'
+save_location = '/Users/DELL/Documents/fantasy_football'
 
 #store data
 invol_data = [] #goal involvement
@@ -21,7 +21,7 @@ metrics = [invol_data, dist_data, def_data, att_data, set_pieces_data, ex_data]
 web_metrics = ['involvement', 'distribution', 'defending', 'goal-threat', 'set-pieces', 'expected']
 	       
 #using Google Chrome browser, requires Chrome Driver to be installed into PATH
-driver = webdriver.Chrome('C:/Chrome_Driver/chromedriver.exe')
+driver = webdriver.Chrome('C:/websriver/chromedriver.exe')
 
 #access fantasy football scout members
 print('accessing website...')
