@@ -21,7 +21,7 @@ metrics = [invol_data, dist_data, def_data, att_data, set_pieces_data, ex_data]
 web_metrics = ['involvement', 'distribution', 'defending', 'goal-threat', 'set-pieces', 'expected']
 	       
 #using Google Chrome browser, requires Chrome Driver to be installed into PATH
-driver = webdriver.Chrome('C:/websriver/chromedriver.exe')
+driver = webdriver.Chrome('C:/webdriver/chromedriver.exe')
 
 #access fantasy football scout members
 print('accessing website...')
